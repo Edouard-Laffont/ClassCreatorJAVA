@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>CharacterSheet</title>
+            <link th:href="@{/PageStyleSheet.css}" rel="stylesheet" />
+        </head>
+
+        <body>
+
+            <link th:href="@{/templates/homePageCharacterList.html}"/>
+
+            <h1><p>Character : </p></h1>
+
+            <h2 th:text=" 'Name : ' + ${personnage.getName()}">NON</h2>
+            <h2 th:text=" 'Classe : ' + ${personnage.getClasse()}">NON</h2>
+            <h2 th:text=" 'Race : ' + ${personnage.getRace()}">NON</h2>
+            <h2 th:text=" 'Level : ' + ${personnage.getLevel()}">NON</h2>
+
+            <h1><p>Stats : </p></h1>
+
+            <h2><li th:each="stat : ${personnage.getStats()}"
+                    th:text="${stat.getName()} + ' : ' + ${stat.getPoints()}">NON</li></h2>
+
+            <h1>ID : </h1>
+
+            <h2 th:text=" ' Id : ' + ${personnage.getId()}">NON</h2>
+
+            <h1>Link to the character : </h1>
+            <h2 th:text=" 'http://localhost:8080/personnage/' + ${personnage.getId()}">NON</h2>
+
+
+
+
+        </body>
+
+    </html>

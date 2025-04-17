@@ -1,0 +1,60 @@
+body{
+
+    background-color: #000000;
+
+}
+
+form{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+
+}
+
+#TxT{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+
+.ButtonWrapper {
+    display: flex;
+    margin-left: 880px;
+}
+
+#Button{
+    position: absolute;
+    font-size: 15px;
+}
+
+
+.loginForm{
+    text-align: center;
+    font-size: 50px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+h2{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+h3{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+ol,ul,li{
+    text-align: center;
+    color: white;
+    list-style-type: none;
+    font-size: 40px;
+}

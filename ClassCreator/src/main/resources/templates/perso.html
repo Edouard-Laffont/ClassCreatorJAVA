@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Recup</title>
+        <link th:href="@{/PageStyleSheet.css}" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <h1>Character sheet : </h1>
+
+        <h2 th:text=" 'Name : ' + ${character.getName()}">NON</h2>
+        <h2 th:text=" 'Classe : ' + ${character.getClasse()}">NON</h2>
+        <h2 th:text=" 'Race : ' + ${character.getRace()}">NON</h2>
+        <h2 th:text=" 'Level : ' + ${character.getLevel()}">NON</h2>
+
+        <h2>
+
+            <form th:action="@{/redo-stats}" th:object="${character}" method="post">
+                Nom : <input type="text" id="name" th:field="*{name}" required/>
+
+                Race :
+                <select name="race" required>
+                    <option value="Orc">Orc</option>
+                    <option value="Elfe">Elfe</option>
+                    <option value="Elfelin">Elfelin</option>
+                    <option value="Nain">Nain</option>
+                    <option value="Hobbit">Hobbit</option>
+                    <option value="Gobelin">Gobelin</option>
+                </select><br>
+
+                Classe :
+                <select name="classe" required>
+                    <option value="Sorcier">Sorcier</option>
+                    <option value="Chevalier">Chevalier</option>
+                    <option value="Archer">Archer</option>
+                    <option value="Occultiste">Occultiste</option>
+                    <option value="Paladin">Paladin</option>
+                    <option value="Menestrel">Menestrel</option>
+                </select><br>
+
+
+                <button type="submit" >Générer le personnage</button>
+            </form>
+
+        </h2>
+
+        <ul>
+
+            <li th:each="stat : ${character.getStats()}" th:text="${stat.getName()} + ' : ' + ${stat.getPoints()}">NON</li>
+
+        </ul>
+
+
+        <form th:action="@{/redo-stats}" th:object="${character}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{name}">
+            <input type="hidden" th:field="*{classe}">
+            <input type="hidden" th:field="*{race}">
+            <input type="hidden" th:field="*{level}">
+
+            <button class="ButtonWrapper" type="submit">redo stats</button>
+        </form>
+
+    </body>
+</html>

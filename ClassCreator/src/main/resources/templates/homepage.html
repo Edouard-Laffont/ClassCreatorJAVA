@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CharacterSheet</title>
+    <link th:href="@{/PageStyleSheet.css}" rel="stylesheet" />
+</head>
+<body>
+<h1>Bienvenue</h1>
+
+<div th:if="${loggedIn}">
+    <p>Connecté en tant que <span th:text="${login}">user</span></p>
+    <button onclick="location.href='/create-character'">Créer personnage</button>
+    <button onclick="location.href='/logout'">Se déconnecter</button>
+</div>
+
+<div th:if="${!loggedIn}">
+    <p>Vous êtes anonyme.</p>
+    <button onclick="location.href='/login'">Se connecter</button>
+    <button onclick="location.href='/register'">S'inscrire</button>
+</div>
+</body>
+</html>

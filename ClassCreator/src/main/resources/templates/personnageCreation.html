@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>personnageCreation</title>
+    <link th:href="@{/PageStyleSheet.css}" rel="stylesheet" />
+</head>
+  <body>
+
+    <form th:action="@{/saveCharacter}" th:object="${character}" method="post">
+      <h2>Nom : <input type="text" id="name" th:field="*{name}" required/></h2>
+
+      <h2>
+        Race :
+          <select name="race" required>
+            <option value="Orc">Orc</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Elfelin">Elfelin</option>
+            <option value="Nain">Nain</option>
+            <option value="Hobbit">Hobbit</option>
+            <option value="Gobelin">Gobelin</option>
+          </select><br>
+      </h2>
+
+
+
+      <h2>
+        Classe :
+          <select name="classe" required>
+            <option value="Sorcier">Sorcier</option>
+            <option value="Chevalier">Chevalier</option>
+            <option value="Archer">Archer</option>
+            <option value="Occultiste">Occultiste</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Menestrel">Menestrel</option>
+          </select><br>
+      </h2>
+
+      <button type="submit" >Générer le personnage</button>
+
+    </form>
+
+  </body>
+
+</html>

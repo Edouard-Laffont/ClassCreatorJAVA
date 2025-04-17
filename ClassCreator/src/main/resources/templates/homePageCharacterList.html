@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Character List</title>
+    <link th:href="@{/PageStyleSheet.css}" rel="stylesheet" />
+</head>
+
+<body>
+
+<ul>
+
+    <li th:each="character : ${characterList}"
+        th:text="${character.name} + ' - ' + character.classe + ' - ' + character.race + ' - ' + character.level"> ich budha </li>
+
+</ul>
+
+</body>
+
+</html>
